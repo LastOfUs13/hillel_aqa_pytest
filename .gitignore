@@ -1,2 +1,5 @@
 .idea
 .idea/*
+/.pytest_cache/
+/bin/
+/lib/
