@@ -1,5 +1,5 @@
 import pytest
-from hw15.functional.human import Human
+from human import Human
 
 
 @pytest.fixture()
@@ -39,3 +39,4 @@ def create_human_with_params():
 @pytest.fixture
 def create_wrong_gender():
     yield Human('Kelly', 17, 'new gender')
+
