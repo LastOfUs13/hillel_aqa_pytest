@@ -40,3 +40,4 @@ def create_human_with_params():
 def create_wrong_gender():
     yield Human('Kelly', 17, 'new gender')
 
+
