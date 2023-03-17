@@ -2,4 +2,6 @@
 .idea/*
 /.pytest_cache/
 /bin/
-/lib/
+/lib
+/HW15/__init__.py
+/HW15/.pytest_cache/
