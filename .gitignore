@@ -1,0 +1,9 @@
+/.pytest_cache/
+/bin/
+/lib/
+/.idea
+/.idea/*
+/pyvenv.cfg
+/HW15/__init__.py
+/HW15/.pytest_cache/
+/HW15/.pytest_cache/*
