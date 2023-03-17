@@ -51,4 +51,3 @@ def test_change_gender_to_same(create_female):
     with pytest.raises(Exception) as expected:
         girl.change_gender('female')
     assert f"{girl._Human__name} already has gender '{girl.gender}'" in str(expected.value)
-
