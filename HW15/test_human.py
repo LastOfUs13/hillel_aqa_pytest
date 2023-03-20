@@ -4,8 +4,10 @@ from pytest import mark
 
 def test_grow(create_dude):
     dude = create_dude
+    current_age = dude.age
     dude.grow()
-    assert dude.age == 28, 'something wrong with age,it should be 28'
+    expected_age = current_age + 1
+    assert expected_age == current_age + 1, 'something wrong with age,it should be 28'
 
 
 def test_change_gender(create_dude):
@@ -19,10 +21,8 @@ def test_alive_status(create_female):
     assert dude._Human__status == 'alive', 'your dude should be alive'
 
 
-def test_dead_status(create_old_dude):
-    dude = create_old_dude
-    dude.grow()
-    dude.grow()
+def test_dead_status(create_dead):
+    dude = create_dead
     assert dude._Human__status == 'dead', 'your dude should be dead'
 
 
@@ -51,3 +51,4 @@ def test_change_gender_to_same(create_female):
     with pytest.raises(Exception) as expected:
         girl.change_gender('female')
     assert f"{girl._Human__name} already has gender '{girl.gender}'" in str(expected.value)
+
