@@ -1,5 +1,6 @@
 import pytest
-from HW15.human import Human
+from human import Human
+
 
 @pytest.fixture()
 def create_dude():
