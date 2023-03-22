@@ -1,3 +1,5 @@
+resource = 'https://lms.ithillel.ua/groups/6374d610e8c1aa52b9f0929b/homeworks/6413673a406fbb7d651b0825'
+
 """XPATH(3steps)"""
 # 1
 from_header_to_child_and_descendant = '//div[@class="page__header"]/child::div[@class="container"]/descendant::nav[@class="header"]'
