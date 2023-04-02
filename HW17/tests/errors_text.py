@@ -1,0 +1,5 @@
+signin_unfilled_password_message = "Epic sadface: Password is required"
+signin_unfilled_mail_message = "Epic sadface: Username is required"
+checkout_unfilled_first_name = "'Error: First Name is required"
+checkout_unfilled_last_name = "Error: Last Name is required"
+checkout_unfilled_zip = "Error: Postal Code is required"
