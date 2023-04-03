@@ -39,6 +39,4 @@ class BasePage:
     def _give_back_element_text(self, element):
         return element.text
 
-    def _slow_down_test(self):
-        time.sleep(1)
-        return self
+
