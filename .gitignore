@@ -10,3 +10,4 @@
 /HW17/.pytest_cache/
 /HW17/.pytest_cache/*
 /HW17/tests/.pytest_cache/
+__pycache__/
