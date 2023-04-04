@@ -20,6 +20,10 @@ def get_browser_id():
     return my_config.get('browser_id', 'id')
 
 
-def get_wrong_user_email():
-    return (my_config.get('site_user_wrong_email', 'user_name_data'),
-            my_config.get('site_user_wrong_email', 'password_data'))
+def get_headless_status():
+    result = my_config.get("browser_id", "headless")
+    if result in ["True", "true", "1"]:
+        return True
+    else:
+        return False
+
