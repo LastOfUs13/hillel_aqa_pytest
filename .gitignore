@@ -7,3 +7,7 @@
 /HW15/__init__.py
 /HW15/.pytest_cache/
 /HW15/.pytest_cache/*
+/HW17/.pytest_cache/
+/HW17/.pytest_cache/*
+/HW17/tests/.pytest_cache/
+__pycache__/
