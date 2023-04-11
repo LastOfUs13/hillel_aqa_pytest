@@ -1,0 +1,8 @@
+{
+    "app_url": "https://www.saucedemo.com/",
+    "mail": "standard_user",
+    "password": "secret_sauce",
+    "browser_id": 1,
+    "headless": "false"
+}
+

@@ -1,4 +1,5 @@
 import configparser
+import json
 
 from HW17.constants import ROOT_DIR
 
@@ -21,9 +22,9 @@ def get_browser_id():
 
 
 def get_headless_status():
-    result = my_config.get("browser_id", "headless")
-    if result in ["True", "true", "1"]:
-        return True
-    else:
-        return False
+    path_to_config_file = f"{ROOT_DIR}/configurations/config.json"
+    with open(path_to_config_file, "r") as file:
+        config = json.load(file)
+    return config["headless"].lower() == "true" and config["browser_id"] == 1
+
 
