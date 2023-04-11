@@ -1,7 +1,5 @@
+from HW17.tests.api_tests.conftest import character_mock, house_mock
 from http import HTTPStatus
-
-from HW17.tests.api_tests.conftest_api import character_mock, house_mock
-from HW17.api_collections.houses_api import HousesAPI
 from HW17.data_for_api.house_data import HouseData
 from HW17.api_collections.characters_api import CharactersAPI
 from HW17.data_for_api.character_data import CharacterData
@@ -14,15 +12,6 @@ def test_get_character_api(env, character_mock):
     actual_character = CharacterData.from_json(**response_data)
     assert response.status_code == HTTPStatus.OK, 'status code is not OK'
     assert actual_character == expected_character, 'data arent  same'
-
-
-def test_get_house_api(env, house_mock):
-    expected_house = house_mock
-    response = HousesAPI(env).get_house(1)
-    response_data = response.json()
-    actual_house = HouseData.from_json(**response_data)
-    assert response.status_code == HTTPStatus.OK, 'status code is note OK'
-    assert actual_house == expected_house, 'data arent  same'
 
 
 def test_character_data(env, character_mock, house_mock):
