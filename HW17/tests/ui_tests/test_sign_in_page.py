@@ -1,4 +1,4 @@
-from HW17.tests.errors_text import signin_unfilled_password_message, signin_unfilled_mail_message
+from HW17.tests.ui_tests.errors_text import signin_unfilled_password_message, signin_unfilled_mail_message
 from HW17.utilities.config_reader import get_user_data
 from pytest import mark
 

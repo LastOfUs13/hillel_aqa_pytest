@@ -1,8 +1,9 @@
 {
-    "app_url": "https://www.saucedemo.com/",
-    "mail": "standard_user",
-    "password": "secret_sauce",
-    "browser_id": 1,
-    "headless": "false"
+  "app_url": "https://www.saucedemo.com/",
+  "mail": "standard_user",
+  "password": "secret_sauce",
+  "browser_id": 1,
+  "headless": "false",
+  "api_url": "https://legacy--api.herokuapp.com/api/v1"
 }
 

@@ -1,4 +1,4 @@
-from HW17.tests.errors_text import checkout_unfilled_zip
+from HW17.tests.ui_tests.errors_text import checkout_unfilled_zip
 from pytest import mark
 
 
