@@ -8,6 +8,11 @@ def test_positive_sign_in(open_products_tab):
     products_tab = open_products_tab
     assert products_tab.is_product_page_title_displayed(), "title isn't displayed"
 
+@mark.smoke
+def test_negative_sign_in(open_products_tab):
+    products_tab = open_products_tab
+    assert False
+
 
 @mark.regression
 def test_that_empty_fields_message_displayed(open_sign_in_page):

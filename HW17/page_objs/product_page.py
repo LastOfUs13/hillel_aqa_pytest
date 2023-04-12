@@ -2,7 +2,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
+import allure
 from HW17.utilities.web_ui.base_page import BasePage
 from selenium.webdriver.support.ui import Select
 
@@ -28,16 +28,19 @@ class ProductPage(BasePage):
     __filters = (By.XPATH, "//select[@class='product_sort_container']")
     __cart = (By.XPATH, "//a[@class='shopping_cart_link']")
 
+    @allure.step
     def get_first_item_price_inside_products_tab(self):
         is_item_price = self.__my_waiter.until(EC.visibility_of_element_located(self.__first_item_price))
         return self._give_back_element_text(is_item_price)
 
+    @allure.step
     def go_to_cart(self):
         is_cart = self.__my_waiter.until(EC.visibility_of_element_located(self.__cart))
         self._click(is_cart)
         from HW17.page_objs.your_cart import YourCart
         return YourCart(self.my_driver)
 
+    @allure.step
     def get_items_prices(self):
         first_item_price = self.get_first_item_price_inside_products_tab()
         last_item_price = self.__my_waiter.until(EC.visibility_of_element_located(self.__last_item_price))
@@ -47,12 +50,14 @@ class ProductPage(BasePage):
         return res
 
 
+    @allure.step
     def apply_filter(self):
         is_filters_dropdown = self.__my_waiter.until(EC.visibility_of_element_located(self.__filters))
         select_filter = Select(is_filters_dropdown)
         select_filter.select_by_index(1)
         return self
 
+    @allure.step
     def go_to_fb_social_link(self):
         action = ActionChains(self.my_driver)
         fb_social_link = self.__my_waiter.until(EC.visibility_of_element_located(self.__fb_social_link))
@@ -61,10 +66,12 @@ class ProductPage(BasePage):
         self.my_driver.switch_to.window(self.my_driver.window_handles[-1])
         return self
 
+    @allure.step
     def is_product_page_title_displayed(self):
         title_element = self.__my_waiter.until(EC.visibility_of_element_located(self.__title_locator))
         return title_element.is_displayed()
 
+    @allure.step
     def go_to_about_link(self):
         self._click(self.__go_to_left_side_bar)
         self._click(self.__left_side_bar_about_link)
@@ -76,29 +83,35 @@ class ProductPage(BasePage):
         self._click(is_sauce_labs_backpack)
         return self
 
+    @allure.step
     def check_title(self):
         expected_title = self.my_driver.title
         return expected_title
 
+    @allure.step
     def logout_from_site(self):
         self._click(self.__go_to_left_side_bar)
         self._click(self.__left_side_bar_log_out_link)
         from HW17.page_objs.sign_in_page import SignInPage
         return SignInPage(self.my_driver)
 
+    @allure.step
     def reset_app_state(self):
         self._click(self.__go_to_left_side_bar)
         self._click(self.__left_side_bar_reset_app_state)
         return self
 
+    @allure.step
     def reset_purchase(self):
         self.add_to_cart_sauce_labs_backpack().reset_app_state().go_to_cart()
         return self
 
+    @allure.step
     def check_that_item_was_deleted(self):
         self._make_sure_that_element_not_displayed(self.__item_in_cart)
         return self
 
+    @allure.step
     def add_item_and_go_to_cart(self):
         self.add_to_cart_sauce_labs_backpack()
         self.go_to_cart()

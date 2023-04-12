@@ -1,4 +1,5 @@
 import json
+import allure
 
 
 class CharacterData:
@@ -11,6 +12,7 @@ class CharacterData:
         self.graduate = "Gryffindor" if "graduate" not in kwargs.keys() else kwargs['Gryffindor']
 
     @classmethod
+    @allure.step
     def from_json(cls, **kwargs):
         return cls(**kwargs)
 
