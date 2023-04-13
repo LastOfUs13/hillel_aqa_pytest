@@ -1,5 +1,5 @@
 import json
-
+import allure
 
 class HouseData:
     def __init__(self, **kwargs):
@@ -11,6 +11,7 @@ class HouseData:
                               'Sirius Black'] if "best_students" not in kwargs.keys() else kwargs['best_students']
 
     @classmethod
+    @allure.step
     def from_json(cls, **kwargs):
         return cls(**kwargs)
 

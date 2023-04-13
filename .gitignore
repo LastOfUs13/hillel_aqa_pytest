@@ -10,3 +10,5 @@
 /HW17/.pytest_cache/*
 /HW17/tests/.pytest_cache/
 __pycache__/
+/HW17/allure_reports/*
+

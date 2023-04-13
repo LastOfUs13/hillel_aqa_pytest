@@ -1,4 +1,6 @@
 import json
+from contextlib import suppress
+import allure
 import pytest
 from HW17.constants import ROOT_DIR
 from HW17.page_objs.sign_in_page import SignInPage
@@ -14,13 +16,23 @@ def env():
         conf = json.loads(result)
         return Configuration(**conf)
 
-
+@pytest.hookimpl(hookwrapper=True, tryfirst=True)
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    rep = outcome.get_result()
+    setattr(item, "rep_" + rep.when, rep)
+    return rep
 @pytest.fixture()
-def open_url(env):
+def open_url(env,request):
     my_driver = driver_factory(int(env.browser_id))
     my_driver.maximize_window()
     my_driver.get(env.app_url)
     yield my_driver
+    if request.node.rep_call.failed:
+        with suppress(Exception):
+            allure.attach(my_driver.get_screenshot_as_png(),
+                          name=request.function.__name__,
+                          attachment_type=allure.attachment_type.PNG)
     my_driver.quit()
 
 
