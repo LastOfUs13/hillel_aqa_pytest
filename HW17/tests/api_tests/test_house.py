@@ -2,8 +2,10 @@ from HW17.tests.api_tests.conftest import character_mock, house_mock
 from HW17.api_collections.houses_api import HousesAPI
 from HW17.data_for_api.house_data import HouseData
 from http import HTTPStatus
+import pytest
 
 
+@pytest.mark.test_get_house
 def test_get_house_api(env, house_mock):
     expected_house = house_mock
     response = HousesAPI(env).get_house(1)
