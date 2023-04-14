@@ -9,6 +9,7 @@ def test_positive_sign_in(open_products_tab):
     products_tab = open_products_tab
     assert products_tab.is_product_page_title_displayed(), "title isn't displayed"
 
+
 @pytest.mark.smoke_false
 def test_negative_sign_in(open_products_tab):
     products_tab = open_products_tab

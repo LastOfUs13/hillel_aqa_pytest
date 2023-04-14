@@ -1,5 +1,6 @@
 import pytest
 
+
 @pytest.mark.smoke
 def test_that_it_is_possible_to_log_out_from_products_page(open_products_tab):
     sign_in_form = open_products_tab.logout_from_site()
