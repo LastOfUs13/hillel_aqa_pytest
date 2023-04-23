@@ -14,5 +14,5 @@ class OrdersRepo:
         return self
 
     def get_all(self):
-        self.__cursor.execute("select * from products")
+        self.__cursor.execute("select * from orders")
         return self.__cursor.fetchall()
