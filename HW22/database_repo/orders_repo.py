@@ -5,7 +5,6 @@ class OrdersRepo:
 
     def create_orders_table(self):
         self.__cursor.execute("create table orders(id SERIAL PRIMARY KEY ,product_id int, quantity int, constraint fk_product_id foreign key(product_id) references products(id));")
-
         self.__cursor.connection.commit()
         return self
 
