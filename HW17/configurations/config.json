@@ -3,7 +3,7 @@
   "mail": "standard_user",
   "password": "secret_sauce",
   "browser_id": 1,
-  "headless": "false",
+  "headless": "true",
   "api_url": "https://legacy--api.herokuapp.com/api/v1"
 }
 
